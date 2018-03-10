@@ -11,9 +11,9 @@ jobs:
           docker_layer_caching: true
       - run: docker build -t app .
       - run: docker login --username "${DOCKER_USERNAME}" --password "${DOCKER_PASSWORD}"
-      - run: docker tag app "${IMAGE_NAME}:${CIRCLE_SHA1}"
+      - run: docker tag app "${IMAGE_NAME}:${CIRCLE_BUILD_NUM}"
       - run: docker tag app "${IMAGE_NAME}:latest"
-      - run: docker push "${IMAGE_NAME}:${CIRCLE_SHA1}"
+      - run: docker push "${IMAGE_NAME}:${CIRCLE_BUILD_NUM}"
       - run: docker push "${IMAGE_NAME}:latest"
 
 
