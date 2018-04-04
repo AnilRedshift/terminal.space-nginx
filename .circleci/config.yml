@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: docker:latest
     environment:
-      - IMAGE_NAME: "anilredshift/yatlab-nginx"
+      - IMAGE_NAME: "anilredshift/terminal-nginx"
     steps:
       - checkout
       - setup_remote_docker:
